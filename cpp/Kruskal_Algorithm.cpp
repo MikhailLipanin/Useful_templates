@@ -1,3 +1,12 @@
+/*
+Kruskal's Algorithm 
+with 0-indexation
+
+Prints cost of MST and vector of Edges of it
+
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -77,9 +86,11 @@ public:
 };
 
 int main() {
+	cout << "Enter the number of vertices and the number of edges in the graph:\n";
 	int n, m;
 	cin >> n >> m;
 	vector <Edge> ar;
+	cout << "Enter edges in the form: v u w\n";
 	for (int i = 0; i < m; i++) {
 		int v, u, w;
 		cin >> v >> u >> w;
@@ -92,9 +103,10 @@ int main() {
 	Kruskals_algorithm f = Kruskals_algorithm(ar, n);
 	auto now = f.exec();
 	if (!f.isConnected()) {
-		cout << "NON-CONNECTED";
+		cout << "NON-CONNECTED\n";
 		return 0;
 	}
+	cout << "Cost of MST is ";
 	cout << now.first << '\n';
 	return 0;
 }
