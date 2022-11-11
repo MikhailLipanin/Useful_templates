@@ -1,9 +1,13 @@
+/*
 //////////////////////
 *перед использованием*
 Hasher h(s);
 s = "#" + s;
 *индексация с единицы*
+mod - модуль, по которому нужно вычислять mul/add
 //////////////////////
+*/
+const int mod = (int)1e9 + 9;
 
 struct Hasher {
 	const int mod1 = (int)1e9 + 7;
@@ -35,8 +39,8 @@ struct Hasher {
 			p2[i + 1] = mul(p2[i], pt2, mod2);
 		}
 	}
-	pii get_hash(int pos, int len) {
-		pii ret;
+	pair <int, int> get_hash(int pos, int len) {
+		pair <int, int> ret;
 		ret.first = sub(h1[pos + len - 1], mul(h1[pos - 1], p1[len], mod1), mod1);
 		ret.second = sub(h2[pos + len - 1], mul(h2[pos - 1], p2[len], mod2), mod2);
 		return ret;
