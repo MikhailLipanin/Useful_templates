@@ -4,10 +4,8 @@
 Hasher h(s);
 s = "#" + s;
 *индексация с единицы*
-mod - модуль, по которому нужно вычислять mul/add
 //////////////////////
 */
-const int mod = (int)1e9 + 9;
 
 struct Hasher {
 	const int mod1 = (int)1e9 + 7;
