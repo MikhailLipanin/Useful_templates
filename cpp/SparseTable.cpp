@@ -1,5 +1,5 @@
 struct Sparse {
-	const int BIT = 20;
+	const int BIT = 30;
 	vector <int> log;
 	vector <vector <int>> sp;
 	Sparse(vector <int>& a) {
