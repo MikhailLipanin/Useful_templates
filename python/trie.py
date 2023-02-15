@@ -22,3 +22,11 @@ class Trie:
                 return False
             current_node = current_node.children[char]
         return current_node.is_end_of_word
+
+    
+trie = Trie()
+trie.insert('hello')
+trie.insert('world')
+print(trie.search('hello')) # Output: True
+print(trie.search('world')) # Output: True
+print(trie.search('hi')) # Output: False
